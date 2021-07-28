@@ -6,11 +6,11 @@
 /*   By: ajimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 14:03:10 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/07/28 14:04:16 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/07/28 18:49:45 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_digit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
