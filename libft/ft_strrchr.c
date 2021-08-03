@@ -6,7 +6,7 @@
 /*   By: ajimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:04:58 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/07/30 15:13:38 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/08/03 13:49:33 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int			i;
 	const char	*last;
 
 	last = s;

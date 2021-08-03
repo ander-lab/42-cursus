@@ -6,7 +6,7 @@
 /*   By: ajimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:14:57 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/07/30 15:15:16 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/08/03 13:45:39 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,3 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 		return (s1[i] - s2[i]);
 	return (0);
 }
-

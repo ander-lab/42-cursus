@@ -31,6 +31,7 @@ char	*ft_strrchr(const char *s, int c);
 int	ft_strncmp(char *s1, char *s2, unsigned int n);
 char	*strnstr(const char *haystack, const char *needle, size_t len);
 void* ft_calloc (size_t num, size_t size);
+char	*ft_strdup(const char *s1)
 
 //to
 int	ft_atoi(const char *str);

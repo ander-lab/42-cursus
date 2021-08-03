@@ -6,18 +6,18 @@
 /*   By: ajimenez  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 20:48:38 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/08/02 13:53:49 by Alejandro        ###   ########.fr       */
+/*   Updated: 2021/08/03 13:07:40 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void* ft_calloc (size_t num, size_t size)
+void	*ft_calloc(size_t num, size_t size)
 {
 	void	*stack;
 
-	stack = (void *)malloc(num * size); 
-	if(!stack)
+	stack = (void *)malloc(num * size);
+	if (!stack)
 		return (0);
 	ft_bzero (stack, num);
 	return (stack);
