@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/03 16:47:50 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/08/04 13:02:54 by ajimenez         ###   ########.fr       */
+/*   Created: 2021/08/04 16:21:35 by ajimenez          #+#    #+#             */
+/*   Updated: 2021/08/04 17:15:12 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*substr;
-	size_t	aux_s;
-	size_t	aux_substr;
+	int	i;
 
-	substr = (char *)malloc(len + 1);
-	if (!s || !substr)
-		return (0);
-	aux_s = start;
-	aux_substr = 0;
-	while (aux_substr < ft_strlen(s) && aux_substr < len)
+	if (s != 0)
 	{
-		substr[aux_substr] = s[aux_s];
-		aux_substr++;
-		aux_s++;
+		i = 0;
+		while (s[i] != '\0')
+		{
+			ft_putchar_fd(s[i], fd);
+			i++;
+		}
 	}
-	substr[aux_substr] = '\0';
-	return (substr);
 }

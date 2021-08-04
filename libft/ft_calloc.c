@@ -6,7 +6,7 @@
 /*   By: ajimenez  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 20:48:38 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/08/03 17:21:57 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/08/04 19:42:03 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	*ft_calloc(size_t num, size_t size)
 	stack = (void *)malloc(num * size);
 	if (!stack)
 		return (0);
-	ft_bzero (stack, num);
+	ft_bzero (stack, (num * size));
 	return (stack);
 }
