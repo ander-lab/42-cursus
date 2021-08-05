@@ -6,7 +6,7 @@
 /*   By: ajimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 14:13:14 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/08/04 19:11:03 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/08/05 23:29:33 by Alejandro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 int				ft_atoi(const char *str);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
+char			*ft_itoa(int n);
 
 /*
 ** Put Library
