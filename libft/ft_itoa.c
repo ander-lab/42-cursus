@@ -6,13 +6,13 @@
 /*   By: Alejandro <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 23:25:22 by Alejandro         #+#    #+#             */
-/*   Updated: 2021/08/05 23:42:01 by Alejandro        ###   ########.fr       */
+/*   Updated: 2021/08/06 20:50:24 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strcpy(char *dst, const char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
 	size_t	i;
 
@@ -28,8 +28,10 @@ char		*ft_strcpy(char *dst, const char *src)
 
 char	*ft_itoa(int n)
 {
-	char *str;
-	if (!(str = (char *)malloc(sizeof(char) * 2)))
+	char	*str;
+
+	str = (char *)malloc(sizeof(char) * 2);
+	if (!str)
 		return (NULL);
 	if (n == -2147483648)
 		return (ft_strcpy(str, "-2147483648"));
