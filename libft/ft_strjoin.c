@@ -6,7 +6,7 @@
 /*   By: ajimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 17:04:26 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/08/04 15:22:55 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/08/08 16:31:08 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		aux_s2;
 
+	if (!s1 || !s2)
+		return (0);
 	sjoin = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!(s1 || s2 || sjoin))
+	if (!sjoin)
 		return (0);
 	i = 0;
 	while (s1[i] != '\0')

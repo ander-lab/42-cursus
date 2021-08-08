@@ -6,7 +6,7 @@
 /*   By: ajimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:04:58 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/08/03 17:20:01 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/08/08 19:37:30 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *s, int c)
 	s += i;
 	while (*s != *last && c != *s)
 		s--;
-	if (c == *s)
+	if ((unsigned char)c == (unsigned char)*s)
 		return ((char *)s);
 	return (0);
 }
