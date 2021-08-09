@@ -6,73 +6,68 @@
 /*   By: Alejandro <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 23:45:28 by Alejandro         #+#    #+#             */
-/*   Updated: 2021/08/08 16:37:22 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/08/09 14:42:38 by Alejandro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-static int	count_words(const char *str, char c)
+static int	count_words(char const *str, char c)
 {
-	int	count;
-	int	trigger;
+	size_t	trigger;
+	int		count;
 
-	if (!str && !c)
-		return (0);
 	count = 0;
+	if (str[0] && str[0] != c)
+		count++;
 	trigger = 0;
-	while (*str)
+	while (trigger < ft_strlen(str))
 	{
-		if (*str != c && trigger == 0)
-		{
-			trigger = 1;
+		if (str[trigger] == c && str[trigger + 1] && str[trigger + 1] != c)
 			count++;
-		}
-		else if (*str == c)
-			trigger = 0;
-		str++;
+		trigger++;
 	}
 	return (count);
 }
 
-static char	*str_dup(const char *str, int start, int finish)
+static int	lenght_str(char const *s, char c, int aux)
 {
-	char	*str2;
-	int		i;
+	int	len;
 
-	i = 0;
-	str2 = malloc((finish - start) * sizeof(char));
-	if (!str2)
-		return (0);
-	while (start < finish)
-		str2[i++] = str[start++];
-	str2[i] = '\0';
-	return (str2);
+	len = 0;
+	while (s[aux] == c && s[aux])
+		aux++;
+	while (s[aux] != c && s[aux])
+	{
+		aux++;
+		len++;
+	}
+	return (len);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
 	int		index;
+	int		sub_index;
+	int		aux;
 	char	**split;
 
-	if (!s || !c)
-		return (0);
-	split = ft_calloc((count_words(s, c) + 1), sizeof(char *));
+	if (!s)
+		return (NULL);
+	split = ft_calloc(sizeof(char *), (count_words(s, c) + 1));
 	if (!split)
-		return (0);
-	i = -1;
-	j = 0;
+		return (NULL);
 	index = -1;
-	while (++i <= ft_strlen(s))
+	aux = 0;
+	while (++index < count_words(s, c))
 	{
-		if (s[i] != c && index < 0)
-			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
-		{
-			split[j++] = str_dup(s, index, i);
-			index = -1;
-		}
+		split[index] = malloc((sizeof(char) * lenght_str(s, c, aux)) + 1);
+		sub_index = 0;
+		while (s[aux] == c && s[aux] != '\0')
+			aux++;
+		while (s[aux] != c && s[aux] != '\0')
+			split[index][sub_index++] = s[aux++];
+		split[index][sub_index] = '\0';
 	}
 	return (split);
 }
