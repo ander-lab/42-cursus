@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 12:20:05 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/08/10 19:55:22 by ajimenez         ###   ########.fr       */
+/*   Created: 2021/08/10 13:04:12 by ajimenez          #+#    #+#             */
+/*   Updated: 2021/08/10 14:27:25 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "libft.h"
+#include "libft.h"
 
-unsigned int	ft_strlcat(char	*dst,
-	const char *src, size_t dstsize)
+t_list	*ft_lstnew(void *content)
 {
-	unsigned int	a;
-	unsigned int	b;
+	t_list	*lstnew;
 
-	if (dstsize <= ft_strlen(dst))
-		return (dstsize + ft_strlen(src));
-	a = ft_strlen(dst);
-	b = 0;
-	while (src[b] != '\0' && a + 1 < dstsize)
-	{
-		dst[a] = src[b];
-		a++;
-		b++;
-	}
-	dst[a] = '\0';
-	return (ft_strlen(dst) + ft_strlen(&src[b]));
+	lstnew = malloc(sizeof(t_list));
+	if (!lstnew)
+		return (0);
+	lstnew->content = content;
+	lstnew->next = NULL;
+	return (lstnew);
 }

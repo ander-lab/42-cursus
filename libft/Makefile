@@ -6,7 +6,7 @@
 #    By: ajimenez <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/01 17:15:58 by ajimenez          #+#    #+#              #
-#    Updated: 2021/08/08 12:53:32 by ajimenez         ###   ########.fr        #
+#    Updated: 2021/08/10 21:13:20 by ajimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 CC		= gcc
@@ -28,15 +28,25 @@ SRCS	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 
 OBJS	= $(SRCS:.c=.o)
 
+BONUS_S = 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
+			ft_lstmap.c
+
+BONUS_O = $(BONUS_S:.c=.o)
+
 all:		$(NAME)
 
 $(NAME):	$(OBJS) $(INCLUDE)
 			$(LIB1) $(NAME) $(OBJS)
 			$(LIB2) $(NAME)
 
+bonus:		$(NAME) $(BONUS_O)
+			$(LIB1) $(NAME) $(BONUS_O)
+			$(LIB2) $(NAME)
+			
 .c.o:
 			$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $(<:.c=.o)
-
+			
 clean:
 			$(RM) $(OBJS) $(BONUS_O)
 
