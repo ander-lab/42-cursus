@@ -1,0 +1,3 @@
+[submodule "42-00-Libft"]
+	path = 42-00-Libft
+	url = https://github.com/ander-lab/42-00-Libft.git
