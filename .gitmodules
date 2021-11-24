@@ -10,3 +10,6 @@
 [submodule "01-ft_printf"]
 	path = 01-ft_printf
 	url = git@github.com:ander-lab/42Cursus-01-ft_printf.git
+[submodule "02-pipex"]
+	path = 02-pipex
+	url = git@github.com:ander-lab/42Cursus-02-pipex.git
