@@ -1,3 +1,12 @@
 [submodule "00-Libft"]
 	path = 00-Libft
 	url = https://github.com/ander-lab/42-00-Libft.git
+[submodule "00-libft"]
+	path = 00-libft
+	url = git@github.com:ander-lab/42Cursus-00-Libft.git
+[submodule "01-Get-Next-Line"]
+	path = 01-Get-Next-Line
+	url = git@github.com:ander-lab/42Cursus-01-GetNextLine.git
+[submodule "01-ft_printf"]
+	path = 01-ft_printf
+	url = git@github.com:ander-lab/42Cursus-01-ft_printf.git
